@@ -5,12 +5,13 @@ set :user, 'deployer'
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-server '',
+server '188.166.252.31',
   roles: [:web, :app, :deploy],
   port: fetch(:port),
   user: fetch(:user),
   primary: true
 
+puts "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
 set :ssh_options, {
