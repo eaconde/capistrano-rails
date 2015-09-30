@@ -1,3 +1,27 @@
+# variables
+
+set :port, 22
+set :user, 'deployer'
+set :deploy_via, :remote_cache
+set :use_sudo, false
+
+server '',
+  roles: [:web, :app, :deploy],
+  port: fetch(:port),
+  user: fetch(:user),
+  primary: true
+
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+
+set :ssh_options, {
+  forward_agent: true,
+  auth_methods: %w(publickey),
+  user: 'deployer'
+}
+
+set :rails_env, :production
+set :conditionally_migrate, true
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -6,7 +30,6 @@
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
-
 
 
 # role-based syntax
