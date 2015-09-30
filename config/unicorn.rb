@@ -1,7 +1,7 @@
 # set path to application
-app_dir = File.expand_path("../..", __FILE__)
-shared_dir = "#{app_dir}/shared"
-# shared_dir = "/home/deployer/apps/capistrano-rails/shared"
+# app_dir = File.expand_path("../..", __FILE__)
+# shared_dir = "#{app_dir}/shared"
+shared_dir = "/home/deployer/apps/capistrano-rails/shared"
 working_directory app_dir
 
 
@@ -18,4 +18,4 @@ stderr_path "#{shared_dir}/log/unicorn.stderr.log"
 stdout_path "#{shared_dir}/log/unicorn.stdout.log"
 
 # Set master PID location
-pid "#{shared_dir}/pids/unicorn.pid"
+pid "#{shared_dir}/tmp/pids/unicorn.pid"
