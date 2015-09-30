@@ -43,7 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'mysql2'
 gem 'unicorn'
 group :development do
   gem 'capistrano-rails'
