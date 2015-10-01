@@ -2,7 +2,7 @@ default: &mysql
   adapter: mysql2
   username: 'deployer'
   password: 'deployer_password'
-  host: '188.166.252.31'
+  host: '123.123.123.123'
 
 development:
   <<: *mysql
