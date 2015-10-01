@@ -16,7 +16,7 @@
 !/log/.keep
 /tmp
 
-/config/database.yml
-/config/secrets.yml
-/config/local_env.yml
-/public/assets
+config/database.yml
+config/secrets.yml
+config/local_env.yml
+public/assets
