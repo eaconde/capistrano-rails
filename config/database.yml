@@ -1,0 +1,17 @@
+default: &mysql
+  adapter: mysql2
+  username: 'deployer'
+  password: 'deployer_password'
+  host: '123.123.123.123'
+
+development:
+  <<: *mysql
+  database: capistrano_rails_dev
+
+test:
+  <<: *mysql
+  database: capistrano_rails_test
+
+production:
+  <<: *mysql
+  database: capistrano_rails
